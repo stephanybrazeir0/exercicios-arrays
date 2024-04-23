@@ -265,3 +265,175 @@
 
 
 // console.log(prova(['a', 'd', 'c', 'a', 'b', 'b', 'a', 'c'], [111, 222, 333, 444, 555, 666, 777, 888, 999, 100],['a', 'd', 'c', 'a', 'b', 'b', 'b', 'c', 'd', 'd', 'a', 'a', 'c', 'b', 'b', 'c', 'c', 'd', 'c', 'a', 'a', 'b', 'a', 'c', 'a', 'd', 'c', 'a', 'b', 'c', 'a', 'c', 'a', 'd', 'c', 'c', 'b', 'b', 'a', 'c', 'a', 'a', 'c', 'a', 'd', 'b', 'b', 'c', 'a', 'c', 'c', 'a', 'b', 'b', 'a', 'c', 'a', 'd', 'c', 'a', 'b', 'b', 'b', 'c', 'a', 'd', 'c', 'a', 'b', 'b', 'a', 'c', 'a', 'd', 'c', 'a', 'b', 'a', 'a', 'c'] ));
+
+//12
+// import promptSync from 'prompt-sync';
+
+// function verificaVetor (vetorInit: number[]){
+//   let VerificaVet: string;
+//   let contadorS: number = 0;
+//   const prompt = promptSync();
+
+//   do {
+//      VerificaVet = prompt("Insira um valor para verificar: ");
+//      for (let i = 0; i < vetorInit.length; i++){
+//       if (parseInt(VerificaVet) === vetorInit[i]){
+//         contadorS++;
+//       }
+
+//     }
+//     if(contadorS > 0){
+//        console.log('Exite no vetor');
+//        contadorS = 0;
+//      } else{
+//        console.log('Não existe no vetor');
+//      }
+//   }
+//   while (parseInt(VerificaVet) > 0);
+
+//   return `Fim da operação`;
+// }
+
+// console.log(verificaVetor([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]));
+
+//13
+//8 nomes clientes em um vetor
+// DVD locados em 2012 por cada cliente vetor 2
+// Para cada 10 locação ganha 1 de graça
+// retorne os nomes dos clientes e quantidade que tem de locação gratis
+// function LocadoraChimas(clientes: string[], locacoes: number[]): object{
+//   let contMimos: number = 0;
+//   let obj: {
+//     nome: string;
+//     mimos: number;
+//   }[] = []
+//   for (let i = 0; i < clientes.length; i++){
+//     if (locacoes[i] >= 10){
+//       for (let j = 10; j <= locacoes[i]; j+= 10){
+//         contMimos++;
+//       }
+//     }
+//     obj.push ({
+//       nome: clientes[i],
+//       mimos: contMimos,
+//     });
+//     contMimos = 0;
+//   }
+//   return {Mimos_2012: obj};
+// }
+
+// console.log(LocadoraChimas(['Cliente 1','Cliente 2','Cliente 3','Cliente 4','Cliente 5','Cliente 6','Cliente 7','Cliente 8','Cliente 9', 'Cliente 10'],[15, 8, 45, 11, 4, 2, 20, 6, 7, 10]));
+
+//14
+// function contaElementos(vetor: number[]) {
+//   let guardaRep: number[] = [];
+//   let repeticao: number = 0;
+//   let obj: {
+//     numero: number;
+//     repeticao: number;
+//   }[] = [];
+
+  
+//   for(let i = 0; i < vetor.length; i++){
+    
+//     for(let j = i+1; j < vetor.length; j++){
+//       if(vetor[i] === vetor[j]){
+//         repeticao++;
+//         guardaRep[i] = vetor[i];
+//       }
+//     }
+    
+//     if (repeticao !== 0){
+//       obj.push({
+//         numero: guardaRep[i],
+//         repeticao: repeticao,
+//       }); 
+//       vetor = vetor.filter(function(rep){
+//         return rep !== guardaRep[i];
+//       })
+//       i -= 1;
+//     }
+//     repeticao = 0;
+//   }
+
+
+//   return obj;
+  
+// }
+
+// console.log(contaElementos([1, 2, 3, 5, 1, 1, 5, 2, 2, 2, 8, 1]));
+
+//15
+// function carroEconomico (modelos: string[], consumo: number[]){
+//   let carroEconomico: number = consumo[0];
+//   let ModeloEconomico: string = '';
+//   let milKM: number[] = [];
+//   let obj: {
+//     Modelo: string;
+//     Litros_1000KM: number;
+//     }[] = [];
+  
+//   for(let i = 0; i < modelos.length; i++){
+//     milKM[i] = 1000/consumo[i];
+//     if (consumo[i] > carroEconomico){
+//       carroEconomico = consumo[i];
+//       ModeloEconomico = modelos[i];
+//     }
+//     obj.push ({
+//       Modelo: modelos[i],
+//       Litros_1000KM: milKM[i],
+//     });
+//   }
+//   return {obj, ModeloEconomico};
+// }
+
+// console.log(carroEconomico(['Modelo 1', 'Modelo 2', 'Modelo 3', 'Modelo 4', 'Modelo 5'],[5, 8, 3, 4, 7]));
+
+//16
+//vetor de 20 posiçoes inteiros
+//coloque ordem crescente
+//selecionar o menor número
+// troque este valor pelo primeiro
+
+// function ordemCrescente (numeros: number[]): number[]{
+//   let menorValor: number = numeros[0];
+//   let j: number = 0;
+  
+//   for (let i = 0; i < numeros.length; i++){
+//     j = i;
+//     for(let k = i + 1; k < numeros.length; k++){
+//       if(numeros[k] < numeros[j]){
+//           menorValor = numeros[k];
+//           j = k;
+       
+//       }
+//     }
+
+//     if( j !== i) {
+//       let valorAtual = numeros[i];
+//       numeros[j] = valorAtual; 
+//       numeros[i] = menorValor; 
+//     }
+//   }
+//   return numeros;
+// }
+
+// console.log(ordemCrescente([20, 19, 18, 9, 1, 3, 10, 14, 9, 11, 7, 3, 4, 5, 17, 14, 12, 18, 0, 30]));
+
+//17
+// function BubbleSort (array: number[]){
+//   let controle: number;
+//   for(let i = 0; i < array.length; i++){
+//     for (let j = i + 1; j < array.length; j++){
+//       if (array[i] > array[j]){
+//         controle = array[i];
+//         array[i] = array[j];
+//         array[j] = controle;
+//       }
+//     }
+    
+//   }
+//   return array;
+// }
+
+// console.log(BubbleSort([20, 1, 1, 9, 1, 3, 10, 14, 20, 30, 1, 7, 40, 4, 5, 17, 17, 20, 20]));
